@@ -13,7 +13,7 @@ You can install the development version of quantgen from GitHub with:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("austinputz/quantgen")
+devtools::install_github("austin-putz/quantgen")
 ```
 
 ## Example
