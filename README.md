@@ -18,12 +18,22 @@ devtools::install_github("austin-putz/quantgen")
 
 ## Example
 
+Load the library as usual:
+
 ```r
 library(quantgen)
+```
 
+Use the basic function with the main argument the proportion selected. 
+
+```{r}
 # Calculate selection intensity when selecting the top 10%
 intensity(0.1)
+```
 
+You can also specify a population size to make an adjustment to intensity. 
+
+```{r}
 # With finite population adjustment
 intensity(0.1, pop_size = 100)
 ```
@@ -43,3 +53,4 @@ A list with three components:
 - `i`: Intensity of selection
 - `var_reduc`: Variance reduction
 - `var_sel`: Variance in selected population
+

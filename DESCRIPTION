@@ -2,8 +2,8 @@ Package: quantgen
 Title: Quantitative Genetics Functions
 Version: 0.1.0
 Authors@R: 
-    person("Austin", "Putz", , "austinvputz@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Austin", "Putz", , "putz.austin@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-6459-7123"))
 Description: Tools for quantitative genetic analyses, including calculation of selection intensity.
     The package provides functions to calculate selection intensity with and without adjustment for
     finite population size.
