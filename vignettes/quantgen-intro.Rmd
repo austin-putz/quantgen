@@ -1,0 +1,68 @@
+---
+title: "Introduction to quantgen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to quantgen}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(quantgen)
+```
+
+## Introduction
+
+The `quantgen` package provides functions for quantitative genetics analyses. Currently, it offers the `intensity()` function for calculating selection intensity.
+
+## Selection Intensity
+
+Selection intensity is a standardized measure of selection strength, representing the mean of the selected group in standard deviation units of the unselected population.
+
+### Basic Usage
+
+To calculate the selection intensity when selecting the top 10% of individuals:
+
+```{r}
+result <- intensity(0.1)
+result
+```
+
+The function returns:
+- `i`: The intensity of selection
+- `var_reduc`: Variance reduction
+- `var_sel`: Variance in selected population
+
+### Finite Population Adjustment
+
+For small populations, you can apply a finite population size correction:
+
+```{r}
+# With population size of 100
+result_finite <- intensity(0.1, pop_size = 100)
+result_finite
+```
+
+### Visualizing Selection Intensity
+
+Let's create a plot to visualize how selection intensity changes with different selection proportions:
+
+```{r fig.width=7, fig.height=5}
+# Calculate intensities for different selection proportions
+proportions <- seq(0.01, 0.5, by = 0.01)
+intensities <- sapply(proportions, function(p) intensity(p)$i)
+
+# Plot the relationship
+plot(proportions, intensities, type = "l", 
+     xlab = "Proportion Selected", ylab = "Selection Intensity",
+     main = "Selection Intensity vs. Proportion Selected")
+```
+
+This plot shows that selection intensity increases as the selection proportion decreases, meaning that more stringent selection results in higher selection intensity.

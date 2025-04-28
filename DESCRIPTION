@@ -1,0 +1,16 @@
+Package: quantgen
+Title: Quantitative Genetics Functions
+Version: 0.1.0
+Authors@R: 
+    person("Austin", "Putz", , "austinvputz@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Tools for quantitative genetic analyses, including calculation of selection intensity.
+    The package provides functions to calculate selection intensity with and without adjustment for
+    finite population size.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
