@@ -22,6 +22,7 @@
 #' # With finite population adjustment
 #' intensity(0.1, pop_size = 100)
 #'
+#' @importFrom stats qnorm dnorm
 #' @export
 intensity <- function(p, pop_size = NULL) {
   
